@@ -10,11 +10,39 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png" />
     <link rel="manifest" href="./favicons/site.webmanifest" />
-    <title>WW2 Tank Moment</title>
+    <title>Sergeant Guy</title>
   </head>
 
   <body>
     <h1>Howdy Partner</h1>
+
+    <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Show Snackbar</button>
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<script>
+(function() {
+  'use strict';
+  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+  var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+  var handler = function(event) {
+    showSnackbarButton.style.backgroundColor = '';
+  };
+  showSnackbarButton.addEventListener('click', function() {
+    'use strict';
+    showSnackbarButton.style.backgroundColor = '#' +
+        Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    var data = {
+      message: 'Button color changed.',
+      timeout: 2000,
+      actionHandler: handler,
+      actionText: 'Undo'
+    };
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
 
     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
       <i class="material-icons">add</i>
@@ -30,6 +58,9 @@
         <label class="mdl-textfield__label" for="sample1">Text...</label>
       </div>
     </form>
+    <p> 
+      <a href="./page.html">Other Page</a>
+    </p>
     
   </body>
   
